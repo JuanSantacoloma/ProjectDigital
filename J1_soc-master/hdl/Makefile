@@ -1,6 +1,6 @@
 DESIGN          = j1soc
 PINS            = $(DESIGN).ucf
-DEVICE          = xc7a100t-1csg324
+DEVICE          = xc6slx4-2tqg144
 BGFLAGS         =  -g TdoPin:PULLNONE -g DonePin:PULLUP \
                    -g CRC:enable -g StartUpClk:CCLK
 

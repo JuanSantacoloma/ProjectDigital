@@ -1,4 +1,6 @@
-module peripheral_config(clk1 , rst1 , d_in , cs , addr1 , rd , wr, data_out);
+module peripheral_config(clk1 , rst1 , d_in , cs , addr1 , rd , wr, data_out,
+  p_clock, con_clock, vsync, href, enable, p_data, pixel_valid, frame_done, 
+  SIOC, SIOD, rst, clk, address, rw, en, reset, pixel_data);
 
   input clk1;
   input rst1;
@@ -28,7 +30,7 @@ module peripheral_config(clk1 , rst1 , d_in , cs , addr1 , rd , wr, data_out);
   output rw;                  //-- Modo lectura (0) o escritura (1)
   
   output en;                    // -- Control 
-  output cen;                   // -- Contador enable
+ // output cen;                   // -- Contador enable
   input [23: 0] pixel_data;
 
   input reset;          // Variable auxiliar divisor
@@ -40,8 +42,6 @@ module peripheral_config(clk1 , rst1 , d_in , cs , addr1 , rd , wr, data_out);
   wire [23: 0] pixel_rgb;  
 
 //------------------------------------ regs and wires-------------------------------
-
-
 
 
 always @(*) begin//----address_decoder------------------
@@ -91,12 +91,12 @@ end//----------------------------------------------mux_4
           .rst(rst)
   		);
 
-  genram ram1 (.clk(con_clock),
+  genram rom1 (.clk(con_clock),
   		   .address(address),
-  		   .rw(rw),
+  		   .rd(rd),
+         .wr(wr),
   		   .data_in(pixel_data),
   		   .en(en),
-  		   .cen(cen),
   		   .data_out(pixel_rgb)
   		   );
 

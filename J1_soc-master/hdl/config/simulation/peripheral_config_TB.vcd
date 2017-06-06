@@ -1,5 +1,5 @@
 $date
-	Tue May 23 15:04:39 2017
+	Tue Jun  6 14:17:24 2017
 $end
 $version
 	Icarus Verilog
@@ -11,46 +11,46 @@ $scope module peripheral_config_TB $end
 $scope module uut $end
 $var wire 1 ! SIOC $end
 $var wire 1 " SIOD $end
-$var wire 17 # addr [16:0] $end
-$var wire 4 $ addr1 [3:0] $end
-$var wire 1 % cen $end
-$var wire 1 & clk $end
-$var wire 1 ' clk1 $end
-$var wire 1 ( con_clock $end
-$var wire 1 ) cs $end
-$var wire 16 * d_in [15:0] $end
-$var wire 1 + en $end
-$var wire 1 , enable $end
-$var wire 1 - frame_done $end
-$var wire 1 . href $end
-$var wire 1 / p_clock $end
-$var wire 8 0 p_data [7:0] $end
-$var wire 24 1 pixel_data [23:0] $end
-$var wire 24 2 pixel_rgb [23:0] $end
-$var wire 1 3 pixel_valid $end
-$var wire 1 4 rd $end
-$var wire 1 5 reset $end
-$var wire 1 6 rst $end
-$var wire 1 7 rst1 $end
-$var wire 1 8 rw $end
-$var wire 1 9 vsync $end
-$var wire 1 : wr $end
-$var reg 1 ; capture $end
-$var reg 16 < data_out [15:0] $end
-$var reg 1 = done $end
-$var reg 5 > s [4:0] $end
+$var wire 4 # addr1 [3:0] $end
+$var wire 1 $ clk $end
+$var wire 1 % clk1 $end
+$var wire 1 & con_clock $end
+$var wire 1 ' cs $end
+$var wire 16 ( d_in [15:0] $end
+$var wire 1 ) en $end
+$var wire 1 * enable $end
+$var wire 1 + frame_done $end
+$var wire 1 , href $end
+$var wire 1 - p_clock $end
+$var wire 8 . p_data [7:0] $end
+$var wire 24 / pixel_data [23:0] $end
+$var wire 24 0 pixel_rgb [23:0] $end
+$var wire 1 1 pixel_valid $end
+$var wire 1 2 rd $end
+$var wire 1 3 reset $end
+$var wire 1 4 rst $end
+$var wire 1 5 rst1 $end
+$var wire 1 6 rw $end
+$var wire 1 7 vsync $end
+$var wire 1 8 wr $end
+$var reg 17 9 address [16:0] $end
+$var reg 1 : capture $end
+$var reg 16 ; data_out [15:0] $end
+$var reg 6 < s [5:0] $end
 $scope module cc $end
-$var wire 1 ? enable $end
-$var wire 1 . href $end
-$var wire 1 ( p_clock $end
-$var wire 8 @ p_data [7:0] $end
-$var wire 1 6 rst $end
-$var wire 1 9 vsync $end
-$var reg 2 A FSM [1:0] $end
-$var reg 1 B SIOC $end
-$var reg 1 C SIOD $end
-$var reg 8 D cb [7:0] $end
-$var reg 1 E contador $end
+$var wire 1 = enable $end
+$var wire 1 , href $end
+$var wire 1 & p_clock $end
+$var wire 8 > p_data [7:0] $end
+$var wire 1 4 rst $end
+$var wire 1 7 vsync $end
+$var reg 2 ? FSM [1:0] $end
+$var reg 1 @ SIOC $end
+$var reg 1 A SIOD $end
+$var reg 17 B address [16:0] $end
+$var reg 8 C cb [7:0] $end
+$var reg 1 D contador $end
+$var reg 1 E contframe $end
 $var reg 8 F cr [7:0] $end
 $var reg 1 G frame_done $end
 $var reg 24 H pixel_data [23:0] $end
@@ -58,17 +58,17 @@ $var reg 1 I pixel_valid $end
 $var reg 8 J y [7:0] $end
 $upscope $end
 $scope module rom1 $end
-$var wire 17 K addr [16:0] $end
-$var wire 1 % cen $end
-$var wire 1 ( clk $end
+$var wire 17 K address [16:0] $end
+$var wire 1 & clk $end
 $var wire 24 L data_in [23:0] $end
-$var wire 1 + en $end
-$var wire 1 8 rw $end
+$var wire 1 ) en $end
+$var wire 1 2 rd $end
+$var wire 1 8 wr $end
 $var reg 24 M data_out [23:0] $end
 $upscope $end
 $scope module cd $end
-$var wire 1 ' clk $end
-$var wire 1 5 reset $end
+$var wire 1 % clk $end
+$var wire 1 3 reset $end
 $var reg 1 N con_clock $end
 $upscope $end
 $upscope $end
@@ -79,453 +79,454 @@ $dumpvars
 xN
 bx M
 bx L
-bz K
+bx K
 bx J
 xI
 bx H
 xG
 bx F
-xE
-bx D
-xC
-xB
-b0 A
-bz @
-1?
-b0 >
-0=
+0E
+xD
+bx C
+bx B
+xA
+x@
+b0 ?
+bz >
+x=
 bx <
-1;
+bx ;
 x:
-z9
-z8
-17
+bx 9
+x8
+z7
 z6
-z5
-x4
-x3
-bx 2
-bx 1
-bz 0
-z/
-z.
-x-
+15
+z4
+z3
+x2
+x1
+bx 0
+bx /
+bz .
+z-
 z,
-z+
-bx *
-x)
-x(
-0'
-z&
-z%
-bx $
-bz #
+x+
+z*
+z)
+bx (
+x'
+x&
+0%
+z$
+bx #
 x"
 x!
 $end
 #1
-1'
+1%
 #2
-0'
+0%
 #3
-1'
+1%
 #4
-0'
+0%
 #5
-1'
+1%
 #6
-0'
+0%
 #7
-1'
+1%
 #8
-0'
+0%
 #9
-1'
+1%
 #10
-0'
-1:
-04
-1)
-b1 $
-b1 *
-07
+b0 <
+0%
+18
+02
+1'
+b1 #
+b1 (
+05
 #11
-1'
+1%
 #12
-0'
+0%
 #13
-1'
+1%
 #14
-0'
+0%
 #15
-1'
+1%
 #16
-0'
+0%
 #17
-1'
+1%
 #18
-0'
+0%
 #19
-1'
+1%
 #20
-0'
+0%
 #21
-1'
+1%
 #22
-0'
+0%
 #23
-1'
+1%
 #24
-0'
+0%
 #25
-1'
+1%
 #26
-0'
+0%
 #27
-1'
+1%
 #28
-0'
+0%
 #29
-1'
+1%
 #30
-0'
+0%
 #31
-1'
+1%
 #32
-0'
+0%
 #33
-1'
+1%
 #34
-0'
+0%
 #35
-1'
+1%
 #36
-0'
+0%
 #37
-1'
+1%
 #38
-0'
+0%
 #39
-1'
+1%
 #40
-0'
+0%
 #41
-1'
+1%
 #42
-0'
+0%
 #43
-1'
+1%
 #44
-0'
+0%
 #45
-1'
+1%
 #46
-0'
+0%
 #47
-1'
+1%
 #48
-0'
+0%
 #49
-1'
+1%
 #50
-0'
+0%
 #51
-1'
+1%
 #52
-0'
+0%
 #53
-1'
+1%
 #54
-0'
+0%
 #55
-1'
+1%
 #56
-0'
+0%
 #57
-1'
+1%
 #58
-0'
+0%
 #59
-1'
+1%
 #60
-0'
+0%
 #61
-1'
+1%
 #62
-0'
+0%
 #63
-1'
+1%
 #64
-0'
+0%
 #65
-1'
+1%
 #66
-0'
+0%
 #67
-1'
+1%
 #68
-0'
+0%
 #69
-1'
+1%
 #70
-0'
+0%
 #71
-1'
+1%
 #72
-0'
+0%
 #73
-1'
+1%
 #74
-0'
+0%
 #75
-1'
+1%
 #76
-0'
+0%
 #77
-1'
+1%
 #78
-0'
+0%
 #79
-1'
+1%
 #80
-0'
+0%
 #81
-1'
+1%
 #82
-0'
+0%
 #83
-1'
+1%
 #84
-0'
+0%
 #85
-1'
+1%
 #86
-0'
+0%
 #87
-1'
+1%
 #88
-0'
+0%
 #89
-1'
+1%
 #90
-0'
+0%
 #91
-1'
+1%
 #92
-0'
+0%
 #93
-1'
+1%
 #94
-0'
+0%
 #95
-1'
+1%
 #96
-0'
+0%
 #97
-1'
+1%
 #98
-0'
+0%
 #99
-1'
+1%
 #100
-0'
+0%
 #101
-1'
+1%
 #102
-0'
+0%
 #103
-1'
+1%
 #104
-0'
+0%
 #105
-1'
+1%
 #106
-0'
+0%
 #107
-1'
+1%
 #108
-0'
+0%
 #109
-1'
+1%
 #110
-0'
+0%
 #111
-1'
+1%
 #112
-0'
+0%
 #113
-1'
+1%
 #114
-0'
+0%
 #115
-1'
+1%
 #116
-0'
+0%
 #117
-1'
+1%
 #118
-0'
+0%
 #119
-1'
+1%
 #120
-0'
+0%
 #121
-1'
+1%
 #122
-0'
+0%
 #123
-1'
+1%
 #124
-0'
+0%
 #125
-1'
+1%
 #126
-0'
+0%
 #127
-1'
+1%
 #128
-0'
+0%
 #129
-1'
+1%
 #130
-0'
+0%
 #131
-1'
+1%
 #132
-0'
+0%
 #133
-1'
+1%
 #134
-0'
+0%
 #135
-1'
+1%
 #136
-0'
+0%
 #137
-1'
+1%
 #138
-0'
+0%
 #139
-1'
+1%
 #140
-0'
+0%
 #141
-1'
+1%
 #142
-0'
+0%
 #143
-1'
+1%
 #144
-0'
+0%
 #145
-1'
+1%
 #146
-0'
+0%
 #147
-1'
+1%
 #148
-0'
+0%
 #149
-1'
+1%
 #150
-0'
+0%
 #151
-1'
+1%
 #152
-0'
+0%
 #153
-1'
+1%
 #154
-0'
+0%
 #155
-1'
+1%
 #156
-0'
+0%
 #157
-1'
+1%
 #158
-0'
+0%
 #159
-1'
+1%
 #160
-0'
+0%
 #161
-1'
+1%
 #162
-0'
+0%
 #163
-1'
+1%
 #164
-0'
+0%
 #165
-1'
+1%
 #166
-0'
+0%
 #167
-1'
+1%
 #168
-0'
+0%
 #169
-1'
+1%
 #170
-0'
+0%
 #171
-1'
+1%
 #172
-0'
+0%
 #173
-1'
+1%
 #174
-0'
+0%
 #175
-1'
+1%
 #176
-0'
+0%
 #177
-1'
+1%
 #178
-0'
+0%
 #179
-1'
+1%
 #180
-0'
+0%
 #181
-1'
+1%
 #182
-0'
+0%
 #183
-1'
+1%
 #184
-0'
+0%
 #185
-1'
+1%
 #186
-0'
+0%
 #187
-1'
+1%
 #188
-0'
+0%
 #189
-1'
+1%
 #190
-0'
+0%
 #191
-1'
+1%
 #192
-0'
+0%
 #193
-1'
+1%
 #194
-0'
+0%
 #195
-1'
+1%
 #196
-0'
+0%
 #197
-1'
+1%
 #198
-0'
+0%
 #199
-1'
+1%
 #200
-0'
+0%

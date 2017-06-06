@@ -1,0 +1,657 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "project.src"
+Input Format                       : mixed
+
+---- Target Parameters
+Target Device                      : xc6slx4-2tqg144
+Output File Name                   : "project.ngc"
+Output Format                      : NGC
+
+---- Source Options
+Top Module Name                    : peripheral_config
+
+---- General Options
+Optimization Goal                  : Area
+Optimization Effort                : 1
+RTL Output                         : yes
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "/home/onarkb/Desktop/J1_soc-master/hdl/config/peripheral_config.v" into library work
+Parsing module <peripheral_config>.
+Analyzing Verilog file "/home/onarkb/Desktop/J1_soc-master/hdl/config/genram.v" into library work
+Parsing module <genram>.
+Analyzing Verilog file "/home/onarkb/Desktop/J1_soc-master/hdl/config/clockDivider.v" into library work
+Parsing module <clockDivider>.
+Analyzing Verilog file "/home/onarkb/Desktop/J1_soc-master/hdl/config/capture.v" into library work
+Parsing module <capture>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+WARNING:HDLCompiler:1016 - "/home/onarkb/Desktop/J1_soc-master/hdl/config/peripheral_config.v" Line 81: Port address is not connected to this instance
+
+Elaborating module <peripheral_config>.
+WARNING:HDLCompiler:413 - "/home/onarkb/Desktop/J1_soc-master/hdl/config/peripheral_config.v" Line 63: Result of 16-bit expression is truncated to fit in 1-bit target.
+
+Elaborating module <capture>.
+WARNING:HDLCompiler:413 - "/home/onarkb/Desktop/J1_soc-master/hdl/config/capture.v" Line 50: Result of 32-bit expression is truncated to fit in 2-bit target.
+WARNING:HDLCompiler:413 - "/home/onarkb/Desktop/J1_soc-master/hdl/config/capture.v" Line 55: Result of 32-bit expression is truncated to fit in 2-bit target.
+WARNING:HDLCompiler:413 - "/home/onarkb/Desktop/J1_soc-master/hdl/config/capture.v" Line 64: Result of 2-bit expression is truncated to fit in 1-bit target.
+WARNING:HDLCompiler:413 - "/home/onarkb/Desktop/J1_soc-master/hdl/config/capture.v" Line 69: Result of 2-bit expression is truncated to fit in 1-bit target.
+WARNING:HDLCompiler:413 - "/home/onarkb/Desktop/J1_soc-master/hdl/config/capture.v" Line 88: Result of 2-bit expression is truncated to fit in 1-bit target.
+
+Elaborating module <genram>.
+
+Elaborating module <clockDivider>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <peripheral_config>.
+    Related source file is "/home/onarkb/Desktop/J1_soc-master/hdl/config/peripheral_config.v".
+WARNING:Xst:647 - Input <rst1> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <pixel_valid> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <SIOC> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <SIOD> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+INFO:Xst:3210 - "/home/onarkb/Desktop/J1_soc-master/hdl/config/peripheral_config.v" line 81: Output port <address> of the instance <cc> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/onarkb/Desktop/J1_soc-master/hdl/config/peripheral_config.v" line 81: Output port <pixel_valid> of the instance <cc> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/onarkb/Desktop/J1_soc-master/hdl/config/peripheral_config.v" line 81: Output port <SIOD> of the instance <cc> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/onarkb/Desktop/J1_soc-master/hdl/config/peripheral_config.v" line 81: Output port <SIOC> of the instance <cc> is unconnected or connected to loadless signal.
+WARNING:Xst:653 - Signal <p_data> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <vsync> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <href> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <rst> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <clk> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <en> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Found 17-bit register for signal <address>.
+    Found 1-bit register for signal <data_out<15>>.
+    Found 1-bit register for signal <data_out<14>>.
+    Found 1-bit register for signal <data_out<13>>.
+    Found 1-bit register for signal <data_out<12>>.
+    Found 1-bit register for signal <data_out<11>>.
+    Found 1-bit register for signal <data_out<10>>.
+    Found 1-bit register for signal <data_out<9>>.
+    Found 1-bit register for signal <data_out<8>>.
+    Found 1-bit register for signal <data_out<7>>.
+    Found 1-bit register for signal <data_out<6>>.
+    Found 1-bit register for signal <data_out<5>>.
+    Found 1-bit register for signal <data_out<4>>.
+    Found 1-bit register for signal <data_out<3>>.
+    Found 1-bit register for signal <data_out<2>>.
+    Found 1-bit register for signal <data_out<1>>.
+    Found 1-bit register for signal <data_out<0>>.
+    Found 1-bit register for signal <capture>.
+    Found 6-bit 7-to-1 multiplexer for signal <_n0106> created at line 40.
+    Summary:
+	inferred  34 D-type flip-flop(s).
+	inferred   2 Multiplexer(s).
+Unit <peripheral_config> synthesized.
+
+Synthesizing Unit <capture>.
+    Related source file is "/home/onarkb/Desktop/J1_soc-master/hdl/config/capture.v".
+WARNING:Xst:647 - Input <p_data> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <href> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 1-bit register for signal <frame_done>.
+    Found 17-bit register for signal <address>.
+    Found 2-bit register for signal <FSM>.
+    Found 24-bit register for signal <pixel_data>.
+    Summary:
+	inferred  44 D-type flip-flop(s).
+Unit <capture> synthesized.
+
+Synthesizing Unit <genram>.
+    Related source file is "/home/onarkb/Desktop/J1_soc-master/hdl/config/genram.v".
+        ROMFILE = "datos.list"
+WARNING:Xst:647 - Input <clk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:3035 - Index value(s) does not match array range for signal <ramR>, simulation mismatch.
+    Found 102400x8-bit single-port RAM <Mram_ramR> for signal <ramR>.
+WARNING:Xst:3035 - Index value(s) does not match array range for signal <ramG>, simulation mismatch.
+    Found 102400x8-bit single-port RAM <Mram_ramG> for signal <ramG>.
+WARNING:Xst:3035 - Index value(s) does not match array range for signal <ramB>, simulation mismatch.
+    Found 102400x8-bit single-port RAM <Mram_ramB> for signal <ramB>.
+    Found 1-bit register for signal <data_out<22>>.
+    Found 1-bit register for signal <data_out<21>>.
+    Found 1-bit register for signal <data_out<20>>.
+    Found 1-bit register for signal <data_out<19>>.
+    Found 1-bit register for signal <data_out<18>>.
+    Found 1-bit register for signal <data_out<17>>.
+    Found 1-bit register for signal <data_out<16>>.
+    Found 1-bit register for signal <data_out<15>>.
+    Found 1-bit register for signal <data_out<14>>.
+    Found 1-bit register for signal <data_out<13>>.
+    Found 1-bit register for signal <data_out<12>>.
+    Found 1-bit register for signal <data_out<11>>.
+    Found 1-bit register for signal <data_out<10>>.
+    Found 1-bit register for signal <data_out<9>>.
+    Found 1-bit register for signal <data_out<8>>.
+    Found 1-bit register for signal <data_out<7>>.
+    Found 1-bit register for signal <data_out<6>>.
+    Found 1-bit register for signal <data_out<5>>.
+    Found 1-bit register for signal <data_out<4>>.
+    Found 1-bit register for signal <data_out<3>>.
+    Found 1-bit register for signal <data_out<2>>.
+    Found 1-bit register for signal <data_out<1>>.
+    Found 1-bit register for signal <data_out<0>>.
+    Found 1-bit register for signal <data_out<23>>.
+    Summary:
+	inferred   3 RAM(s).
+	inferred  24 D-type flip-flop(s).
+Unit <genram> synthesized.
+
+Synthesizing Unit <clockDivider>.
+    Related source file is "/home/onarkb/Desktop/J1_soc-master/hdl/config/clockDivider.v".
+    Found 1-bit register for signal <con_clock>.
+    Summary:
+	inferred   1 D-type flip-flop(s).
+Unit <clockDivider> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 3
+ 102400x8-bit single-port RAM                          : 3
+# Registers                                            : 11
+ 1-bit register                                        : 3
+ 16-bit register                                       : 1
+ 17-bit register                                       : 2
+ 2-bit register                                        : 1
+ 24-bit register                                       : 1
+ 8-bit register                                        : 3
+# Multiplexers                                         : 2
+ 6-bit 2-to-1 multiplexer                              : 1
+ 6-bit 7-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:1710 - FF/Latch <pixel_data_9> (without init value) has a constant value of 0 in block <cc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_data_10> (without init value) has a constant value of 0 in block <cc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_data_11> (without init value) has a constant value of 0 in block <cc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_data_12> (without init value) has a constant value of 0 in block <cc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_data_13> (without init value) has a constant value of 0 in block <cc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_data_14> (without init value) has a constant value of 0 in block <cc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_data_15> (without init value) has a constant value of 0 in block <cc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_data_16> (without init value) has a constant value of 0 in block <cc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_data_17> (without init value) has a constant value of 0 in block <cc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_data_18> (without init value) has a constant value of 0 in block <cc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_data_19> (without init value) has a constant value of 0 in block <cc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_data_20> (without init value) has a constant value of 0 in block <cc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_data_21> (without init value) has a constant value of 0 in block <cc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_data_22> (without init value) has a constant value of 0 in block <cc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_data_23> (without init value) has a constant value of 0 in block <cc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <frame_done> (without init value) has a constant value of 0 in block <cc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <address_16> (without init value) has a constant value of 0 in block <peripheral_config>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_out_15> (without init value) has a constant value of 0 in block <peripheral_config>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_out_14> (without init value) has a constant value of 0 in block <peripheral_config>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_out_13> (without init value) has a constant value of 0 in block <peripheral_config>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_out_12> (without init value) has a constant value of 0 in block <peripheral_config>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_out_11> (without init value) has a constant value of 0 in block <peripheral_config>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_out_10> (without init value) has a constant value of 0 in block <peripheral_config>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_out_9> (without init value) has a constant value of 0 in block <peripheral_config>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_out_8> (without init value) has a constant value of 0 in block <peripheral_config>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_out_7> (without init value) has a constant value of 0 in block <peripheral_config>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_out_6> (without init value) has a constant value of 0 in block <peripheral_config>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_out_5> (without init value) has a constant value of 0 in block <peripheral_config>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_out_4> (without init value) has a constant value of 0 in block <peripheral_config>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_out_3> (without init value) has a constant value of 0 in block <peripheral_config>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_out_2> (without init value) has a constant value of 0 in block <peripheral_config>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_out_1> (without init value) has a constant value of 0 in block <peripheral_config>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_out_0> (without init value) has a constant value of 0 in block <peripheral_config>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_out_15> has a constant value of 0 in block <rom1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_out_0> has a constant value of 0 in block <rom1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_out_1> has a constant value of 0 in block <rom1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_out_2> has a constant value of 0 in block <rom1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_out_3> has a constant value of 0 in block <rom1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_out_4> has a constant value of 0 in block <rom1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_out_5> has a constant value of 0 in block <rom1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_out_6> has a constant value of 0 in block <rom1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_out_7> has a constant value of 0 in block <rom1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_out_16> has a constant value of 0 in block <rom1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_out_17> has a constant value of 0 in block <rom1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_out_18> has a constant value of 0 in block <rom1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_out_19> has a constant value of 0 in block <rom1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_out_20> has a constant value of 0 in block <rom1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_out_21> has a constant value of 0 in block <rom1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_out_22> has a constant value of 0 in block <rom1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_out_23> has a constant value of 0 in block <rom1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_data_8> (without init value) has a constant value of 0 in block <cc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_data_7> (without init value) has a constant value of 0 in block <cc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_data_6> (without init value) has a constant value of 0 in block <cc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_data_5> (without init value) has a constant value of 0 in block <cc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_data_4> (without init value) has a constant value of 0 in block <cc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_data_3> (without init value) has a constant value of 0 in block <cc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_data_2> (without init value) has a constant value of 0 in block <cc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_data_1> (without init value) has a constant value of 0 in block <cc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_data_0> (without init value) has a constant value of 0 in block <cc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <FSM_1> has a constant value of 0 in block <cc>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_out_8> has a constant value of 0 in block <rom1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_out_9> has a constant value of 0 in block <rom1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_out_10> has a constant value of 0 in block <rom1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_out_11> has a constant value of 0 in block <rom1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_out_12> has a constant value of 0 in block <rom1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_out_13> has a constant value of 0 in block <rom1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_out_14> has a constant value of 0 in block <rom1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <address_9> (without init value) has a constant value of 0 in block <peripheral_config>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <address_10> (without init value) has a constant value of 0 in block <peripheral_config>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <address_11> (without init value) has a constant value of 0 in block <peripheral_config>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <address_12> (without init value) has a constant value of 0 in block <peripheral_config>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <address_13> (without init value) has a constant value of 0 in block <peripheral_config>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <address_14> (without init value) has a constant value of 0 in block <peripheral_config>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <address_15> (without init value) has a constant value of 0 in block <peripheral_config>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <capture> (without init value) has a constant value of 0 in block <peripheral_config>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <address_8> (without init value) has a constant value of 0 in block <peripheral_config>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <address_7> (without init value) has a constant value of 0 in block <peripheral_config>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <address_6> (without init value) has a constant value of 0 in block <peripheral_config>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <address_5> (without init value) has a constant value of 0 in block <peripheral_config>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <address_4> (without init value) has a constant value of 0 in block <peripheral_config>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <address_3> (without init value) has a constant value of 0 in block <peripheral_config>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <address_2> (without init value) has a constant value of 0 in block <peripheral_config>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <address_1> (without init value) has a constant value of 0 in block <peripheral_config>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <address_0> (without init value) has a constant value of 0 in block <peripheral_config>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1290 - Hierarchical block <rom1> is unconnected in block <peripheral_config>.
+   It will be removed from the design.
+WARNING:Xst:1290 - Hierarchical block <cc> is unconnected in block <peripheral_config>.
+   It will be removed from the design.
+WARNING:Xst:2404 -  FFs/Latches <address<16:16>> (without init value) have a constant value of 0 in block <peripheral_config>.
+
+Synthesizing (advanced) Unit <genram>.
+INFO:Xst:3230 - The RAM description <Mram_ramG> will not be implemented on the device block RAM because of limited available resources. If you would like this RAM to be implemented in block RAM, please select a larger device or increase the value specified by the BRAM_Utilization_Ratio constraint.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 102400-word x 8-bit                 |          |
+    |     clkA           | connected to signal <en>            | rise     |
+    |     weA            | connected to signal <wr>            | high     |
+    |     addrA          | connected to signal <address>       |          |
+    |     diA            | connected to signal <data_in<15:8>> |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3230 - The RAM description <Mram_ramB> will not be implemented on the device block RAM because of limited available resources. If you would like this RAM to be implemented in block RAM, please select a larger device or increase the value specified by the BRAM_Utilization_Ratio constraint.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 102400-word x 8-bit                 |          |
+    |     clkA           | connected to signal <en>            | rise     |
+    |     weA            | connected to signal <wr>            | high     |
+    |     addrA          | connected to signal <address>       |          |
+    |     diA            | connected to signal <data_in<23:16>> |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_ramR> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 102400-word x 8-bit                 |          |
+    |     clkA           | connected to signal <en>            | rise     |
+    |     weA            | connected to signal <wr>            | high     |
+    |     addrA          | connected to signal <address>       |          |
+    |     diA            | connected to signal <data_in<7:0>>  |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <genram> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 3
+ 102400x8-bit single-port distributed RAM              : 3
+# Registers                                            : 102
+ Flip-Flops                                            : 102
+# Multiplexers                                         : 2
+ 6-bit 2-to-1 multiplexer                              : 1
+ 6-bit 7-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1293 - FF/Latch <data_out_8> has a constant value of 0 in block <genram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_out_9> has a constant value of 0 in block <genram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_out_10> has a constant value of 0 in block <genram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_out_11> has a constant value of 0 in block <genram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_out_12> has a constant value of 0 in block <genram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_out_13> has a constant value of 0 in block <genram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_out_14> has a constant value of 0 in block <genram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_out_15> has a constant value of 0 in block <genram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_out_16> has a constant value of 0 in block <genram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_out_17> has a constant value of 0 in block <genram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_out_18> has a constant value of 0 in block <genram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_out_19> has a constant value of 0 in block <genram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_out_20> has a constant value of 0 in block <genram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_out_21> has a constant value of 0 in block <genram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_out_22> has a constant value of 0 in block <genram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <data_out_23> has a constant value of 0 in block <genram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <data_out_7> has a constant value of 0 in block <genram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <data_out_6> has a constant value of 0 in block <genram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <data_out_5> has a constant value of 0 in block <genram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <data_out_4> has a constant value of 0 in block <genram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <data_out_3> has a constant value of 0 in block <genram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <data_out_2> has a constant value of 0 in block <genram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <data_out_1> has a constant value of 0 in block <genram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <data_out_0> has a constant value of 0 in block <genram>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <pixel_data_5> (without init value) has a constant value of 0 in block <capture>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <pixel_data_6> (without init value) has a constant value of 0 in block <capture>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <pixel_data_7> (without init value) has a constant value of 0 in block <capture>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <pixel_data_8> (without init value) has a constant value of 0 in block <capture>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <pixel_data_9> (without init value) has a constant value of 0 in block <capture>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <pixel_data_10> (without init value) has a constant value of 0 in block <capture>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <pixel_data_11> (without init value) has a constant value of 0 in block <capture>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <pixel_data_12> (without init value) has a constant value of 0 in block <capture>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <pixel_data_13> (without init value) has a constant value of 0 in block <capture>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <pixel_data_14> (without init value) has a constant value of 0 in block <capture>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <pixel_data_15> (without init value) has a constant value of 0 in block <capture>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <pixel_data_16> (without init value) has a constant value of 0 in block <capture>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <pixel_data_17> (without init value) has a constant value of 0 in block <capture>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <pixel_data_18> (without init value) has a constant value of 0 in block <capture>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <pixel_data_19> (without init value) has a constant value of 0 in block <capture>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <pixel_data_20> (without init value) has a constant value of 0 in block <capture>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <pixel_data_21> (without init value) has a constant value of 0 in block <capture>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <pixel_data_22> (without init value) has a constant value of 0 in block <capture>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <pixel_data_23> (without init value) has a constant value of 0 in block <capture>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <frame_done> (without init value) has a constant value of 0 in block <capture>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <FSM_1> has a constant value of 0 in block <capture>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <address_0> (without init value) has a constant value of 0 in block <capture>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <address_1> (without init value) has a constant value of 0 in block <capture>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <address_2> (without init value) has a constant value of 0 in block <capture>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <address_3> (without init value) has a constant value of 0 in block <capture>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <address_4> (without init value) has a constant value of 0 in block <capture>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <address_5> (without init value) has a constant value of 0 in block <capture>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <address_6> (without init value) has a constant value of 0 in block <capture>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <address_7> (without init value) has a constant value of 0 in block <capture>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <address_8> (without init value) has a constant value of 0 in block <capture>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <address_9> (without init value) has a constant value of 0 in block <capture>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <address_10> (without init value) has a constant value of 0 in block <capture>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <address_11> (without init value) has a constant value of 0 in block <capture>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <address_12> (without init value) has a constant value of 0 in block <capture>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <address_13> (without init value) has a constant value of 0 in block <capture>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <address_14> (without init value) has a constant value of 0 in block <capture>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <address_15> (without init value) has a constant value of 0 in block <capture>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <address_16> (without init value) has a constant value of 0 in block <capture>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <pixel_data_0> (without init value) has a constant value of 0 in block <capture>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <pixel_data_1> (without init value) has a constant value of 0 in block <capture>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <pixel_data_2> (without init value) has a constant value of 0 in block <capture>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <pixel_data_3> (without init value) has a constant value of 0 in block <capture>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <pixel_data_4> (without init value) has a constant value of 0 in block <capture>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <FSM_0> of sequential type is unconnected in block <capture>.
+WARNING:Xst:1710 - FF/Latch <data_out_15> (without init value) has a constant value of 0 in block <peripheral_config>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_out_14> (without init value) has a constant value of 0 in block <peripheral_config>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_out_13> (without init value) has a constant value of 0 in block <peripheral_config>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_out_12> (without init value) has a constant value of 0 in block <peripheral_config>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_out_11> (without init value) has a constant value of 0 in block <peripheral_config>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_out_10> (without init value) has a constant value of 0 in block <peripheral_config>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_out_9> (without init value) has a constant value of 0 in block <peripheral_config>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_out_8> (without init value) has a constant value of 0 in block <peripheral_config>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_out_7> (without init value) has a constant value of 0 in block <peripheral_config>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_out_6> (without init value) has a constant value of 0 in block <peripheral_config>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_out_5> (without init value) has a constant value of 0 in block <peripheral_config>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_out_4> (without init value) has a constant value of 0 in block <peripheral_config>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_out_3> (without init value) has a constant value of 0 in block <peripheral_config>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_out_2> (without init value) has a constant value of 0 in block <peripheral_config>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_out_1> (without init value) has a constant value of 0 in block <peripheral_config>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <data_out_0> (without init value) has a constant value of 0 in block <peripheral_config>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <address_15> (without init value) has a constant value of 0 in block <peripheral_config>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <address_14> (without init value) has a constant value of 0 in block <peripheral_config>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <address_13> (without init value) has a constant value of 0 in block <peripheral_config>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <address_12> (without init value) has a constant value of 0 in block <peripheral_config>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <address_11> (without init value) has a constant value of 0 in block <peripheral_config>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <address_10> (without init value) has a constant value of 0 in block <peripheral_config>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <address_9> (without init value) has a constant value of 0 in block <peripheral_config>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <address_8> (without init value) has a constant value of 0 in block <peripheral_config>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <address_7> (without init value) has a constant value of 0 in block <peripheral_config>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <address_6> (without init value) has a constant value of 0 in block <peripheral_config>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <address_5> (without init value) has a constant value of 0 in block <peripheral_config>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <address_4> (without init value) has a constant value of 0 in block <peripheral_config>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <address_3> (without init value) has a constant value of 0 in block <peripheral_config>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <address_2> (without init value) has a constant value of 0 in block <peripheral_config>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <address_1> (without init value) has a constant value of 0 in block <peripheral_config>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <address_0> (without init value) has a constant value of 0 in block <peripheral_config>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <capture> (without init value) has a constant value of 0 in block <peripheral_config>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <peripheral_config> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 0) on block peripheral_config, actual ratio is 0.
+FlipFlop cd/con_clock has been replicated 1 time(s) to handle iob=true attribute.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 2
+ Flip-Flops                                            : 2
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : project.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 3
+#      GND                         : 1
+#      INV                         : 2
+# FlipFlops/Latches                : 2
+#      FDR                         : 2
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 48
+#      IBUF                        : 1
+#      OBUF                        : 47
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx4tqg144-2 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:               1  out of   4800     0%  
+ Number of Slice LUTs:                    2  out of   2400     0%  
+    Number used as Logic:                 2  out of   2400     0%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:      3
+   Number with an unused Flip Flop:       2  out of      3    66%  
+   Number with an unused LUT:             1  out of      3    33%  
+   Number of fully used LUT-FF pairs:     0  out of      3     0%  
+   Number of unique control sets:         1
+
+IO Utilization: 
+ Number of IOs:                         104
+ Number of bonded IOBs:                  49  out of    102    48%  
+    IOB Flip Flops/Latches:               1
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk1                               | BUFGP                  | 2     |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 2.260ns (Maximum Frequency: 442.478MHz)
+   Minimum input arrival time before clock: 3.448ns
+   Maximum output required time after clock: 4.118ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk1'
+  Clock period: 2.260ns (frequency: 442.478MHz)
+  Total number of paths / destination ports: 2 / 2
+-------------------------------------------------------------------------
+Delay:               2.260ns (Levels of Logic = 1)
+  Source:            cd/con_clock (FF)
+  Destination:       cd/con_clock (FF)
+  Source Clock:      clk1 rising
+  Destination Clock: clk1 rising
+
+  Data Path: cd/con_clock to cd/con_clock
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              1   0.525   0.681  cd/con_clock (cd/con_clock)
+     INV:I->O              2   0.255   0.725  cd/con_clock_INV_11_o1_INV_0 (cd/con_clock_INV_11_o)
+     FDR:D                     0.074          cd/con_clock
+    ----------------------------------------
+    Total                      2.260ns (0.854ns logic, 1.406ns route)
+                                       (37.8% logic, 62.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk1'
+  Total number of paths / destination ports: 2 / 2
+-------------------------------------------------------------------------
+Offset:              3.448ns (Levels of Logic = 2)
+  Source:            reset (PAD)
+  Destination:       cd/con_clock (FF)
+  Destination Clock: clk1 rising
+
+  Data Path: reset to cd/con_clock
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.328   0.681  reset_IBUF (reset_IBUF)
+     INV:I->O              2   0.255   0.725  cd/reset_inv1_INV_0 (cd/reset_inv)
+     FDR:R                     0.459          cd/con_clock
+    ----------------------------------------
+    Total                      3.448ns (2.042ns logic, 1.406ns route)
+                                       (59.2% logic, 40.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk1'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              4.118ns (Levels of Logic = 1)
+  Source:            cd/con_clock_1 (FF)
+  Destination:       con_clock (PAD)
+  Source Clock:      clk1 rising
+
+  Data Path: cd/con_clock_1 to con_clock
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              1   0.525   0.681  cd/con_clock_1 (cd/con_clock_1)
+     OBUF:I->O                 2.912          con_clock_OBUF (con_clock)
+    ----------------------------------------
+    Total                      4.118ns (3.437ns logic, 0.681ns route)
+                                       (83.5% logic, 16.5% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk1
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk1           |    2.260|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 5.00 secs
+Total CPU time to Xst completion: 5.22 secs
+ 
+--> 
+
+
+Total memory usage is 402896 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  211 (   0 filtered)
+Number of infos    :    7 (   0 filtered)
+

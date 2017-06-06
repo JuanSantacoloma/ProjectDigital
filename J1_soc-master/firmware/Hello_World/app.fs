@@ -44,17 +44,15 @@ do
  config_capture !
 \ begin config_done @ d# 1 = until
 
- d# 0 
+  
 
- do
-   1+
-   dup
+ 
    config_address !
    config_dataR @ emit-uart  
    config_dataG @ emit-uart 
    config_dataB @ emit-uart 
- loop
-
+    	
+   
 
 \	dividir
 loop

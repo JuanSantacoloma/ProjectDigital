@@ -1,6 +1,6 @@
 module capture ( rst, p_clock, vsync, href, enable,
 					 p_data, pixel_data, pixel_valid,
-					 frame_done, SIOD, SIOC);
+					 frame_done, SIOD, SIOC, address);
 
 	input rst;   // Reset camara
 	// input power;  // Encendido camara
@@ -14,8 +14,9 @@ module capture ( rst, p_clock, vsync, href, enable,
 	output reg frame_done;
 	output reg SIOD;
 	output reg SIOC;
+	output reg [16:0]address; 
 	reg contador;
-	reg contframe = 0;
+	reg contframe=0;
 	reg [7:0] y;
 	reg [7:0] cb;
 	reg [7:0] cr; 
@@ -37,25 +38,26 @@ module capture ( rst, p_clock, vsync, href, enable,
 		 		frame_done <= 0;
 		 		SIOC <= 0;
 		 		SIOD <= 0;
+		 		address= 0;
 
 		 	end
 
 			else if (enable) begin 
 
-				case(FSM) 
+				case(FSM)   // Lógica maquina de estados
 
 					WAIT: begin
 								FSM <= (!vsync) ? SAVE : WAIT;
-				   				frame_done <= 0; 
+				   				frame_done <= 0;  				// Estado de espera
 					   	end
 							
 					SAVE: begin	
 							FSM <= vsync ? WAIT : SAVE;
 
-							SIOC <= 1;
+							SIOC <= 1;			//Variables de control
 							SIOD <= 1;
 
-				 			if(href && frame_done == 0) begin
+				 			if(href && frame_done == 0) begin   //Estado de captura
 
 				 				if (contador==0) begin
 					 				y[7:0] <= p_data;					 				
@@ -68,33 +70,28 @@ module capture ( rst, p_clock, vsync, href, enable,
 				 				end
 
 				 				else if (contador==2) begin
-					 				cr[7:0] <= p_data;
+					 				cr[7:0] <= p_data;		// COnversión de YCbCr a RGB
 
 					 				pixel_data[7:0] <= (1.164)*(y - 16) + (1.596)*(cr - 128);
 					 				pixel_data[15:8] <= (1.164)*(y - 16) - (0.813)*(cr - 128) - (0.392)*(cb - 128);
 					 				pixel_data[23:16] <= (1.164)*(y - 16) + (2.017)*(cb - 128);
 
 					 				contador = 0;
+					 				address = address + 1;
 				 				end
 
 				 			end
 
 				 			if(vsync && frame_done == 0) begin
 
-								if(contframe <= 102399)
-									contframe = contframe +  1;
+								if(contframe <= 9999) begin    //
+ 									contframe = contframe +  1;
+									end
 								else 
 									frame_done=1;
-
 							end 	
-				  			
 						end
-
-
 				endcase	
-
-
-		
 			end	
 		end
 	

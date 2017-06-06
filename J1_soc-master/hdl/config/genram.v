@@ -1,12 +1,12 @@
-module genram(clk, address, rw, data_in, data_out, en, cen);
+module genram(clk, address, rd, wr, data_in, data_out, en);
 
                //-- Puertos
          input clk;                      //-- Señal de reloj global
          input [16: 0] address;      //-- Direcciones
-         input rw;                  //-- Modo lectura (0) o escritura (1)
+         input wr;
+         input rd;                  //-- Modo lectura (0) o escritura (1)
          input [23: 0] data_in;   //-- Dato de entrada
          input en;                    // -- Control 
-         input cen;                   // -- Contador enable
          output reg [23: 0] data_out; //-- Dato a escribir
           
 
@@ -21,19 +21,23 @@ parameter ROMFILE = "datos.list";
     //-- Lectura de la memoria
     always @(posedge en) begin
 
-      if (rw == 0)
+      if (rd == 1)
       data_out[7:0] <= ramR[address];
       data_out[15:8] <= ramG[address];
       data_out[23:16] <= ramB[address];
+     // adresss = address + 1;
     end
 
     //-- Escritura en la memoria
     always @(posedge en) begin
-      if (rw == 1) begin
+      if (wr == 1) begin
         
           ramR[address] <= data_in [7:0];
           ramG[address] <= data_in [15:8];
           ramB[address] <= data_in [23:16];
+
+          //if (address <= 16)) 
+          // adresss = address + 1;
       end
     end
 
